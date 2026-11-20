@@ -43,7 +43,22 @@ From **Sign in**, open the resident, institution, or platform admin demo. The ph
 
 ## Deployment
 
-The frontend exports HTML and static assets with Next.js App Router. For a Cloudflare Pages deployment, use the Next.js Static HTML Export preset with build command `npm run build` and output directory `out`. For Cloudflare Workers with static assets, serve the same output and configure the host to serve the route directories’ `index.html` files. The [Cloudflare Next.js static deployment guide](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/) describes the Pages configuration. Cloudflare recommends [vinext](https://developers.cloudflare.com/workers/framework-guides/web-apps/nextjs/) when adding a Workers runtime for server-backed Next.js features.
+The frontend exports HTML and static assets to `out/` with Next.js App Router.
+
+### Cloudflare Workers Builds
+
+The `lugari-platform` Worker uses `wrangler.jsonc` to serve `out/` directly. Run these commands from the repository root.
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+
+The explicit assets configuration bypasses Wrangler’s framework detection and the OpenNext server build. To verify packaging locally, run `npm run build` followed by `npx wrangler deploy --dry-run`.
+
+### Cloudflare Pages
+
+For Git integration on Pages, use the Next.js Static HTML Export preset, `npm run build` as the build command and `out` as the output directory. For Direct Upload, upload the built `out/` directory. See the [Cloudflare Next.js static deployment guide](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/).
 
 Set `NEXT_PUBLIC_APP_URL` to the intended canonical public origin at build time. `NEXT_PUBLIC_TENANT_ID` defaults to `lugari`. `NEXT_PUBLIC_USE_MOCK_DATA` documents the demo integration boundary. The current distribution ships only the Lugari tenant and its catalog adapter. A production API adapter must be implemented before changing the data mode. Keep future API credentials in server configuration.
 
