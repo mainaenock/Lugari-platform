@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react';
 import Link from '@/components/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { Bell, BriefcaseBusiness, ChevronDown, CircleAlert, House, MapPin, Menu, Moon, Search, Signal, Sun, UserRound, X } from 'lucide-react';
@@ -11,9 +11,14 @@ import { rememberSearch, setPreference, useSimulation } from '@/services/local';
 import { MyWardLink, Translate } from './preferences';
 
 export function Brand() {
-  return <Link className="brand" href="/" aria-label={tenant.shortName + ' homepage'}>
-    <span className="brand-mark"><MapPin size={24} strokeWidth={2.4} aria-hidden="true" /></span>
-    <span>{tenant.shortName}<b>.ke</b><small>COMMUNITY PLATFORM</small></span>
+  const branding = tenant.branding;
+  const logoStyle = branding ? {
+    '--brand-image': 'url("' + branding.logo + '")',
+    '--brand-dark-image': 'url("' + branding.darkLogo + '")',
+  } as CSSProperties : undefined;
+
+  return <Link className="brand" href="/" aria-label={tenant.shortName + ' homepage'} style={logoStyle}>
+    {branding ? <span className="brand-logo" aria-hidden="true" /> : tenant.domain}
   </Link>;
 }
 

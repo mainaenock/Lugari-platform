@@ -1,4 +1,4 @@
-const OFFLINE_CACHE = 'lugari-offline-v1';
+const OFFLINE_CACHE = 'lugari-offline-v2';
 const OFFLINE = '/offline/';
 const SHELL = [OFFLINE, '/offline.html', '/mark.svg', '/icon-192.png', '/manifest.webmanifest'];
 

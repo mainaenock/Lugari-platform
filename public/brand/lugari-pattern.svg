@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="140" viewBox="0 0 176 140">
+  <defs>
+    <g id="routes" fill="none" stroke-linecap="round">
+      <path d="M19.5 15.5v20a13 13 0 0 0 13 13H49" stroke="#fff9e8" stroke-width="4.4"/>
+      <path d="M33 22v11a4.75 4.75 0 0 0 4.75 4.75H49" stroke="#f5cc71" stroke-width="3.2"/>
+      <circle cx="48.3" cy="20.5" r="3.4" fill="#f5cc71"/>
+    </g>
+  </defs>
+  <use href="#routes" transform="translate(5 -5) scale(1.25)"/>
+  <use href="#routes" transform="translate(93 65) scale(1.25)"/>
+</svg>

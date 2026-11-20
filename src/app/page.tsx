@@ -79,7 +79,7 @@ export default function Home() {
       <SectionHeading title="Local businesses" href="/businesses/" link="Open the directory" />
       <ResourceGrid items={catalog.list('businesses').slice(0, 3)} />
     </section>
-    <section className="wrap home-section"><div className="callout">
+    <section className="wrap home-section"><div className="callout callout-pattern">
       <div className="section-head"><div><p className="eyebrow"><Bell size={15}/> Ward alerts</p><h2>Stay connected to Lugari</h2><p className="lead">Choose the topics and channels you want to follow.</p></div><Link className="btn btn-amber" href="/account/subscriptions/">Set alert preferences</Link></div>
     </div></section>
   </>;

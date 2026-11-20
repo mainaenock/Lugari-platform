@@ -1,11 +1,13 @@
 export interface Ward { slug: string; name: string; summary: string; approximatePopulation?: number; areaKm2?: number }
 export interface Tenant {
   id: string; name: string; shortName: string; domain: string; county: string; country: string;
+  branding?: { logo: string; darkLogo: string };
   wards: Ward[]; features: { marketplace: boolean; ussd: boolean; live: boolean; talent: boolean; agriculture: boolean; politicalAds: boolean };
 }
 const lugari: Tenant = {
   id: 'lugari', name: 'Lugari Digital Infrastructure', shortName: 'Lugari', domain: 'lugari.ke',
   county: 'Kakamega', country: 'Kenya',
+  branding: { logo: '/brand/lugari-logo.svg', darkLogo: '/brand/lugari-logo-dark.svg' },
   wards: [
     { slug: 'lumakanda', name: 'Lumakanda', approximatePopulation: 29955, areaKm2: 59, summary: 'Home to the constituency headquarters and a starting point for local services.' },
     { slug: 'lugari', name: 'Lugari', approximatePopulation: 31381, areaKm2: 81.3, summary: 'Find local development records, school updates and community activities in Lugari Ward.' },
