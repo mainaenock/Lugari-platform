@@ -1,0 +1,14 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+/account/*
+  X-Robots-Tag: noindex
+/portal/*
+  X-Robots-Tag: noindex
+/admin/*
+  X-Robots-Tag: noindex
+/report/status/*
+  X-Robots-Tag: noindex
+/sw.js
+  Cache-Control: no-cache

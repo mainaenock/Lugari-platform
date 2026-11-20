@@ -1,0 +1,52 @@
+import type { ResourceKind } from './types';
+
+export const directories: Record<ResourceKind, { title: string; singular: string; intro: string }> = {
+  projects: { title: 'Development projects', singular: 'Project', intro: 'Track local infrastructure and read the evidence behind each update.' },
+  opportunities: { title: 'Jobs and opportunities', singular: 'Opportunity', intro: 'Find jobs, bursaries, scholarships, tenders and practical training.' },
+  schools: { title: 'School directory', singular: 'School', intro: 'Find school profiles, local education updates and published sources.' },
+  businesses: { title: 'Local business directory', singular: 'Business', intro: 'Explore services and businesses by ward and category.' },
+  events: { title: 'Community events', singular: 'Event', intro: 'Find community meetings, workshops, sports and public events.' },
+  organizations: { title: 'Organizations', singular: 'Organization', intro: 'Find local institutions, community groups and public offices.' },
+  marketplace: { title: 'Lugari marketplace', singular: 'Listing', intro: 'Browse example listings for local produce, equipment, livestock and services.' },
+  talent: { title: 'Talent and skills', singular: 'Professional', intro: 'Discover local trades, skills and creative services by ward.' },
+  news: { title: 'News and local stories', singular: 'Update', intro: 'Read community guides and dated updates with their original sources.' },
+  'public-participation': { title: 'Public participation', singular: 'Consultation', intro: 'Review local proposals, read supporting information and share your priorities.' },
+  commitments: { title: 'Commitment tracker', singular: 'Commitment', intro: 'Follow sample institutional commitments from announcement to delivery.' },
+  alerts: { title: 'Alerts and notices', singular: 'Notice', intro: 'Find service and safety notices with their dates, locations and sources.' },
+};
+export function isDirectory(value: string): value is ResourceKind {
+  return Object.hasOwn(directories, value);
+}
+export const publicPages: Record<string, [string, string]> = {
+  wards: ['Explore the wards', 'Find information for each of the six wards in Lugari constituency.'],
+  search: ['Search Lugari', 'Search projects, schools, opportunities, businesses, events and local services.'],
+  jobs: ['Find jobs', 'Browse job listings and check the deadline and eligibility for each role.'],
+  education: ['Bursaries and education', 'Find the official bursary resources, schools and training in one place.'],
+  announcements: ['Announcements', 'See recent platform notices and sourced updates.'],
+  report: ['Report an issue', 'Share a local concern, then use your reference to check its status.'],
+  'report/status': ['Track a report', 'Enter a case reference to view its public timeline.'],
+  'report/status/LUG-84721': ['Track a report', 'View a sample public case timeline.'],
+  community: ['Culture and community', 'Explore the people, stories, sports and shared history of Lugari.'],
+  'community/issues': ['Community issues', 'See the distribution of reports by ward, category and status.'],
+  agriculture: ['Agriculture hub', 'Explore market prices, local farm resources and agricultural opportunities.'],
+  leadership: ['Public leadership', 'Find information about elected representatives, county offices and constituency services.'],
+  'leadership/mp': ['Member of Parliament', 'Office information and published sources for Lugari’s parliamentary representative.'],
+  sports: ['Sports in Lugari', 'Find sample fixtures, community sports events and updates from the archive.'],
+  live: ['Lugari Live', 'Find upcoming public sessions and summaries of recent community events.'],
+  data: ['Lugari in numbers', 'Explore what the platform’s records cover and which data is available.'],
+  'data/projects': ['Project ledger', 'Explore the projects in the platform by category, ward, status and reported value.'],
+  'reports/state-of-lugari': ['State of Lugari', 'A sample annual report on the local information covered by Lugari.ke.'],
+  'access/ussd': ['USSD access', 'Try an interactive feature-phone simulation of Lugari’s community services.'],
+  advertise: ['Advertise on Lugari.ke', 'Explore directory listings, featured placements and opt-in communication.'],
+  appointments: ['Request an appointment', 'Send a sample appointment request to the institution workspace.'],
+  corrections: ['Corrections', 'Flag outdated information or submit evidence that a published record needs to change.'],
+  sources: ['Data sources', 'See where Lugari.ke finds information and what its trust labels mean.'],
+  privacy: ['Privacy centre', 'Manage the information and settings stored by Lugari.ke on this device.'],
+  terms: ['Terms of use', 'Understand how to use the community platform, its listings and demonstration workflows.'],
+  contact: ['Contact the platform', 'Use the feedback form or find the relevant public office.'],
+  about: ['About Lugari.ke', 'Independent digital infrastructure for Lugari’s residents, businesses and institutions.'],
+  accessibility: ['Accessibility', 'Learn about the platform’s accessibility features and share any barriers you encounter.'],
+  offline: ['You’re offline', 'Reconnect and try again. Your local preferences and demo activity remain in this browser.'],
+  'sign-in': ['Sign in', 'Try the resident, institution or platform administration workspace.'],
+  register: ['Create a resident profile', 'Set up a demonstration profile and choose a ward.'],
+};
